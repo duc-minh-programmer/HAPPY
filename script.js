@@ -29,7 +29,7 @@ const progress = document.getElementById("progress");
 const progressContainer = document.getElementById("progress-container");
 
 function loadSong(src) {
-    audio.src = src || `https://storage.googleapis.com/webai-54992.appspot.com/hb-always-14.mp3`;
+    audio.src = src || `hue_di_tau_7377222338619641089.mp4`;
 }
 
 // Play song
@@ -89,9 +89,9 @@ function hexToRgb(hex) {
 }
 
 function initStyle() {
-    document.getElementById('progressTitle').innerText = 'Happy Birthday to You (Always 14)';
-    document.getElementById('titleHeader').innerText = 'Happy Birth Day To Thảo 🕯️';
-    document.getElementById('contentHeader').innerText = '🌹💐 Chúc mừng sinh nhật bạn Thảo ☘️';
+    document.getElementById('progressTitle').innerText = 'Happy Birthday to You =))';
+    document.getElementById('titleHeader').innerText = 'Happy Birthday To Linh 🕯️';
+    document.getElementById('contentHeader').innerText = '🌹💐 Chúc mừng sinh nhật đại ca Nguyen Dieu Linh ☘️';
     loadSong();
 }
 
@@ -111,9 +111,9 @@ window.onload = async function() {
             }
             
             const {data} = await response.json();
-            document.getElementById('progressTitle').innerText = data?.musicName || 'Happy Birthday to You (Always 14)';
-            document.getElementById('titleHeader').innerText = data?.tieuDe || 'Happy Birth Day To Thao 🕯️';
-            document.getElementById('contentHeader').innerText = data?.message || '🌹💐 Chúc mừng sinh nhật bạn Thảo ☘️';
+            document.getElementById('progressTitle').innerText = data?.musicName || 'Happy Birthday to You';
+            document.getElementById('titleHeader').innerText = data?.tieuDe || 'Happy Birth Day To Linh 🕯️';
+            document.getElementById('contentHeader').innerText = data?.message || '🌹💐 Chúc mừng sinh nhật bạn ☘️';
             document.documentElement.style.setProperty('--primary-color', data?.color || '#ee5286');
             document.documentElement.style.setProperty('--secondary-color', hexToRgb(data?.color ||"#ee5286"));
             loadSong(data?.musicLink);
