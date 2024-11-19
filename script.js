@@ -90,7 +90,7 @@ function hexToRgb(hex) {
 
 function initStyle() {
     //document.getElementById('progressTitle').innerText = '';
-    document.getElementById('titleHeader').innerText = 'chúc mừng mẹ ngày nhà giáo 20/11 🕯️';
+    document.getElementById('titleHeader').innerText = 'chúc mừng mẹ ngày nhà giáo 20/11';
     document.getElementById('contentHeader').innerText = '🌹💐 Gửi đến mẹ - người mẹ tuyệt vời nhất của con, mặc dù con nhiều lần làm mẹ buồn lòng nhưng mẹ vẫn luôn yêu thương con, con sẽ cố gắng học thật chăm chỉ để không phụ lòng mẹ nữa, con không thể chúc trực tiếp nhưng qua cái web này của con con chỉ muốn nói là con yêu mẹ và rất biết ơn vì mẹ đã là mẹ của con ☘️';
     document.getElementById('contentHeader2').innerText = 'con zai yêu của mẹ';
     //loadSong();
