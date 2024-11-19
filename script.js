@@ -29,26 +29,26 @@ const progress = document.getElementById("progress");
 const progressContainer = document.getElementById("progress-container");
 
 function loadSong(src) {
-    audio.src = src || `hue_di_tau_7377222338619641089.mp4`;
+    audio.src = src || ``;
 }
 
 // Play song
-function playSong() {
-    musicContainer.classList.add("play");
-    playBtn.querySelector("i.fas").classList.remove("fa-play");
-    playBtn.querySelector("i.fas").classList.add("fa-pause");
+// function playSong() {
+//     musicContainer.classList.add("play");
+//     playBtn.querySelector("i.fas").classList.remove("fa-play");
+//     playBtn.querySelector("i.fas").classList.add("fa-pause");
 
-    audio.play();
-}
+//     audio.play();
+// }
 
 // Pause song
-function pauseSong() {
-    musicContainer.classList.remove("play");
-    playBtn.querySelector("i.fas").classList.add("fa-play");
-    playBtn.querySelector("i.fas").classList.remove("fa-pause");
+// function pauseSong() {
+//     musicContainer.classList.remove("play");
+//     playBtn.querySelector("i.fas").classList.add("fa-play");
+//     playBtn.querySelector("i.fas").classList.remove("fa-pause");
 
-    audio.pause();
-}
+//     audio.pause();
+// }
 
 // Update progress bar
 function updateProgress(e) {
@@ -89,10 +89,11 @@ function hexToRgb(hex) {
 }
 
 function initStyle() {
-    document.getElementById('progressTitle').innerText = 'Happy Birthday to You =))';
-    document.getElementById('titleHeader').innerText = 'Happy Birthday To Linh 🕯️';
-    document.getElementById('contentHeader').innerText = '🌹💐 Chúc mừng sinh nhật đại ca Nguyen Dieu Linh ☘️';
-    loadSong();
+    //document.getElementById('progressTitle').innerText = '';
+    document.getElementById('titleHeader').innerText = 'chúc mừng mẹ ngày nhà giáo 20/11 🕯️';
+    document.getElementById('contentHeader').innerText = '🌹💐 Gửi đến mẹ - người mẹ tuyệt vời nhất của con, mặc dù con nhiều lần làm mẹ buồn lòng nhưng mẹ vẫn luôn yêu thương con, con sẽ cố gắng học thật chăm chỉ để không phụ lòng mẹ nữa, con không thể chúc trực tiếp nhưng qua cái web này của con con chỉ muốn nói là con yêu mẹ và rất biết ơn vì mẹ đã là mẹ của con ☘️';
+    document.getElementById('contentHeader2').innerText = 'con zai yêu của mẹ';
+    //loadSong();
 }
 
 window.onload = async function() {
@@ -102,25 +103,25 @@ window.onload = async function() {
     if (!id) {
         initStyle();
     }
-    else {
-        try {
-            const response = await fetch(`https://us-central1-webai-54992.cloudfunctions.net/women_day_ai?id=${id}`);
+    // else {
+    //     try {
+    //         const response = await fetch(`https://us-central1-webai-54992.cloudfunctions.net/women_day_ai?id=${id}`);
             
-            if (!response.ok) {
-                throw new Error('Không tìm thấy dữ liệu cho ID này.');
-            }
+    //         if (!response.ok) {
+    //             throw new Error('Không tìm thấy dữ liệu cho ID này.');
+    //         }
             
-            const {data} = await response.json();
-            document.getElementById('progressTitle').innerText = data?.musicName || 'Happy Birthday to You';
-            document.getElementById('titleHeader').innerText = data?.tieuDe || 'Happy Birth Day To Linh 🕯️';
-            document.getElementById('contentHeader').innerText = data?.message || '🌹💐 Chúc mừng sinh nhật bạn ☘️';
-            document.documentElement.style.setProperty('--primary-color', data?.color || '#ee5286');
-            document.documentElement.style.setProperty('--secondary-color', hexToRgb(data?.color ||"#ee5286"));
-            loadSong(data?.musicLink);
-        } catch (error) {
-            initStyle();
-        }
-    }
+    //         const {data} = await response.json();
+    //         document.getElementById('progressTitle').innerText = data?.musicName || 'Happy ';
+    //         document.getElementById('titleHeader').innerText = data?.tieuDe || 'Happy  🕯️';
+    //         document.getElementById('contentHeader').innerText = data?.message || '🌹💐 Chúc mừng  ☘️';
+    //         document.documentElement.style.setProperty('--primary-color', data?.color || '#ee5286');
+    //         document.documentElement.style.setProperty('--secondary-color', hexToRgb(data?.color ||"#ee5286"));
+    //         loadSong(data?.musicLink);
+    //     } catch (error) {
+    //         initStyle();
+    //     }
+    // }
     headerContainer.style.display = 'block';   
      
 };
@@ -129,4 +130,4 @@ window.onload = async function() {
 audio.addEventListener("timeupdate", updateProgress);
 
 // Click on progress bar
-progressContainer.addEventListener("click", setProgress);
+// progressContainer.addEventListener("click", setProgress);
